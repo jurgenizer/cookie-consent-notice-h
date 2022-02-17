@@ -58,6 +58,11 @@ class CookieConsentNotice {
                                               ${this.banner.linkText}
                                           </a>
                                       </p>
+                                      <div class="icon__section">
+                                      <p class="icon__text" style="color: ${this.banner.color};">
+                                          ${this.banner.locationIcon.text} 
+                                      </p>
+                                      </div>
                                       <div class="btn__section">
                                           <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
                                               ${this.banner.acceptBtn.text}
@@ -265,6 +270,9 @@ class CookieConsentNotice {
         background: obj.rejectBtnBackground || '#209cee',
         color: obj.rejectBtnColor || '#fff'
       },
+      locationIcon: {
+        text: obj.locationIconText || lang.locationIconText,
+      },
       manageCookies: {
         color: obj.manageColor || '#4a4a4a',
         background: obj.manageBackground || '#fff',
@@ -286,6 +294,7 @@ class LanguagesCCN {
     this.bannerLinkText = lang['bannerLinkText']
     this.acceptBtnText = lang['acceptBtnText']
     this.rejectBtnText = lang['rejectBtnText']
+    this.locationIconText = lang['locationIconText']
     this.manageText = lang['manageText']
   }
 
@@ -297,6 +306,7 @@ class LanguagesCCN {
         'bannerLinkText': 'Lees meer oor koekies',
         'acceptBtnText': 'Aanvaar',
         'rejectBtnText': 'Weier',
+        'locationIconText': 'Lokasie',
         'manageText': 'Koekie-instellings'
       },
       en: {
@@ -305,6 +315,7 @@ class LanguagesCCN {
         'bannerLinkText': 'Read more about cookies',
         'acceptBtnText': 'Accept',
         'rejectBtnText': 'Reject',
+        'locationIconText': 'Location',
         'manageText': 'Manage cookies'
       }
     }
