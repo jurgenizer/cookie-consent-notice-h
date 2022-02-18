@@ -1,4 +1,40 @@
-/* CUSTOM CLASSES */
+/* Material Design Font, self-hosted */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(MaterialIcons-Regular.ttf) format('truetype');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+
+/* Banner config classes */
 .cookieConsentNotice__border {
   border: 1px solid #e6e6e6 !important;
 }
@@ -140,7 +176,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  margin-top: 20px;
+    margin-top: 20px;
   }
 
   .btn__section .btn__accept {

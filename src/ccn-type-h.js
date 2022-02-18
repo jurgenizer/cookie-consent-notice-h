@@ -59,9 +59,14 @@ class CookieConsentNotice {
                                           </a>
                                       </p>
                                       <div class="icon__section">
-                                      <p class="icon__text" style="color: ${this.banner.color};">
-                                          ${this.banner.locationIcon.text} 
-                                      </p>
+                                          <div id="locationSection">
+                                                <p 
+                                                  class="icon__text" 
+                                                  style="color:${this.banner.color}">
+                                                  ${this.banner.locationIcon.text} 
+                                                </p>
+                                                <span class="material-icons">my_location</span>
+                                          </div>
                                       </div>
                                       <div class="btn__section">
                                           <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
@@ -101,11 +106,13 @@ class CookieConsentNotice {
   openManageCookies() {
     this.PreBanner.style.display = this.config.hideAfterClick ? "none" : "block"
     this.DOMbanner.classList.remove('cookieConsentNotice__show')
+    
   }
 
   openSelector() {
     this.PreBanner.style.display = "none";
     this.DOMbanner.classList.add('cookieConsentNotice__show')
+    document.getElementById("locationSection").style.display = this.config.showLocation ? "flex" : "none"
   }
 
   acceptCookies() {
@@ -243,7 +250,8 @@ class CookieConsentNotice {
     this.config = {
       border: obj.border || 'border',
       position: obj.position || 'left',
-      hideAfterClick: obj.hideAfterClick || false
+      hideAfterClick: obj.hideAfterClick || false,
+      showLocation: obj.showLocation || false
     }
 
     this.tracking = {
