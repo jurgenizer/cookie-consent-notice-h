@@ -58,21 +58,34 @@ class CookieConsentNotice {
                                               ${this.banner.linkText}
                                           </a>
                                       </p>
-                                      <div class="icon__section">
-                                          <div id="locationSection">
-                                                <p 
-                                                  class="icon__text" 
-                                                  style="color:${this.banner.color}">
-                                                  ${this.banner.locationIcon.text} 
-                                                </p>
-                                                <span class="material-icons">my_location</span>
-                                          </div>
+                                  <div class="icon__section">
+                                      <div class="icon__list__container">
+                                          <ul class="icon__list">
+                                          <li class="header">Data Collected</li>
+                                          <li id="iconlocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
+                                          <li id="iconHistory"><span class="material-icons">history</span>${this.banner.locationIcon.text}</li>
+                                          <li>10 Domains</li>
+                                          <li>1GB Bandwidth</li>
+                                          </ul>
                                       </div>
+                                      <div class="icon__list__container">
+                                      <ul class="icon__list">
+                                      <li class="header">Data Shared</li>
+                                      <li id="iconLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
+                                      <li id="iconHistory"><span class="material-icons">history_toggle_off</span>${this.banner.locationIcon.text}</li>
+                                      <li>10 Domains</li>
+                                      <li>1GB Bandwidth</li>
+                                      </ul>
+                                  </div>
+                                          
+                                    </div>
+                            
+                                    
                                       <div class="btn__section">
                                           <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
                                               ${this.banner.acceptBtn.text}
                                           </button>
-                                          <button type="button" id="rejectCookies" class="btn__settings settings__btn__styles" style="color: ${this.banner.rejectBtn.color}; background-color: ${this.banner.rejectBtn.background};">
+                                          <button type="button" id="rejectCookies" class="btn__decline decline__btn__styles" style="color: ${this.banner.rejectBtn.color}; background-color: ${this.banner.rejectBtn.background};">
                                               ${this.banner.rejectBtn.text}
                                           </button>
                                       </div>
