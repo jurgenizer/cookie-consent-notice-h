@@ -64,8 +64,8 @@ class CookieConsentNotice {
                                           <li class="header">Data Collected</li>
                                           <li id="iconlocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
                                           <li id="iconHistory"><span class="material-icons">history</span>${this.banner.locationIcon.text}</li>
-                                          <li>10 Domains</li>
-                                          <li>1GB Bandwidth</li>
+                                          <li id="iconIdentifiers"><span class="material-icons">badge</span>${this.banner.locationIcon.text}</li>
+                                          <li id="deviceData"><span class="material-icons">devices</span>${this.banner.locationIcon.text}</li>
                                           </ul>
                                       </div>
                                       <div class="icon__list__container">
@@ -73,8 +73,7 @@ class CookieConsentNotice {
                                       <li class="header">Data Shared</li>
                                       <li id="iconLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
                                       <li id="iconHistory"><span class="material-icons">history_toggle_off</span>${this.banner.locationIcon.text}</li>
-                                      <li>10 Domains</li>
-                                      <li>1GB Bandwidth</li>
+                                      <li id="deviceData"><span class="material-icons">devices</span>${this.banner.locationIcon.text}</li>
                                       </ul>
                                   </div>
                                           
