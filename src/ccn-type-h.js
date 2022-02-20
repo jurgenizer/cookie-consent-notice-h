@@ -14,6 +14,11 @@ class CookieConsentNotice {
     this.PreBanner = undefined
     this.Cookies = undefined
     this.DOMbanner = undefined
+    // Li items that show icons and assciated text
+    this.LiIdentifiers = undefined
+    this.LiBrowsingHistory = undefined
+    this.LiLocation = undefined
+    this.LiDeviceDetails = undefined
   }
 
   render() {
@@ -62,22 +67,18 @@ class CookieConsentNotice {
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Collected</li>
-                                          <li id="iconlocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
-                                          <li id="iconHistory"><span class="material-icons">history</span>${this.banner.locationIcon.text}</li>
-                                          <li id="iconIdentifiers"><span class="material-icons">badge</span>${this.banner.locationIcon.text}</li>
-                                          <li id="deviceData"><span class="material-icons">devices</span>${this.banner.locationIcon.text}</li>
+                                          <li id="liIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
+                                          <li id="liBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
+                                          <li id="liLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
+                                          <li id="liDeviceDetails"><span class="material-icons">devices</span>${this.banner.deviceDetailsIcon.text}</li>
                                           </ul>
-                                      </div>
+                                      </div> 
                                       <div class="icon__list__container">
-                                      <ul class="icon__list">
-                                      <li class="header">Data Shared</li>
-                                      <li id="iconLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
-                                      <li id="iconHistory"><span class="material-icons">history_toggle_off</span>${this.banner.locationIcon.text}</li>
-                                      <li id="deviceData"><span class="material-icons">devices</span>${this.banner.locationIcon.text}</li>
-                                      </ul>
+                                          <ul class="icon__list">
+                                          <li class="header">Data Shared</li>
+                                          </ul>
+                                        </div>
                                   </div>
-                                          
-                                    </div>
                             
                                     
                                       <div class="btn__section">
@@ -92,6 +93,12 @@ class CookieConsentNotice {
                               `;
     document.body.appendChild(this.Cookies);
     this.DOMbanner = document.getElementById('cookieConsentNotice-banner')
+
+    // Get li list items by id
+    this.LiIdentifiers = document.getElementById('liIdentifiers')
+    this.LiBrowsingHistory = document.getElementById('liBrowsingHistory')
+    this.LiLocation = document.getElementById('liLocation')
+    this.LiDeviceDetails = document.getElementById('liDeviceDetails')
 
 
     // SET EVENT LISTENERS
@@ -124,7 +131,11 @@ class CookieConsentNotice {
   openSelector() {
     this.PreBanner.style.display = "none";
     this.DOMbanner.classList.add('cookieConsentNotice__show')
-    document.getElementById("locationSection").style.display = this.config.showLocation ? "flex" : "none"
+    this.LiIdentifiers.style.display = this.config.showIdentifiers ? "block" : "none"
+    this.LiBrowsingHistory.style.display = this.config.showBrowsingHistory ? "block" : "none"
+    this.LiLocation.style.display = this.config.showLocation ? "block" : "none"
+    this.LiDeviceDetails.style.display = this.config.showDeviceDetails ? "block" : "none"
+    
   }
 
   acceptCookies() {
@@ -263,7 +274,10 @@ class CookieConsentNotice {
       border: obj.border || 'border',
       position: obj.position || 'left',
       hideAfterClick: obj.hideAfterClick || false,
-      showLocation: obj.showLocation || false
+      showIdentifiers: obj.showIdentifiers || false,
+      showBrowsingHistory: obj.showBrowsingHistory || false,
+      showLocation: obj.showLocation || false,
+      showDeviceDetails: obj.showDeviceDetails || false,
     }
 
     this.tracking = {
@@ -288,10 +302,19 @@ class CookieConsentNotice {
       rejectBtn: {
         text: obj.rejectBtnText || lang.rejectBtnText,
         background: obj.rejectBtnBackground || '#209cee',
-        color: obj.rejectBtnColor || '#fff'
+        color: obj.rejectBtnColor || '#fff',
+      },
+      identifiersIcon: {
+        text: obj.identifiersIcontext || lang.identifiersIconText,
       },
       locationIcon: {
         text: obj.locationIconText || lang.locationIconText,
+      },
+      browsingHistoryIcon: {
+        text: obj.browsingHistoryIconText || lang.browsingHistoryIconText,
+      },
+      deviceDetailsIcon: {
+        text: obj.deviceDetailsIconText || lang.deviceDetailsIconText,
       },
       manageCookies: {
         color: obj.manageColor || '#4a4a4a',
@@ -314,7 +337,10 @@ class LanguagesCCN {
     this.bannerLinkText = lang['bannerLinkText']
     this.acceptBtnText = lang['acceptBtnText']
     this.rejectBtnText = lang['rejectBtnText']
+    this.identifiersIconText = lang['identifiersIconText']
+    this.browsingHistoryIconText = lang['browsingHistoryIconText']
     this.locationIconText = lang['locationIconText']
+    this.deviceDetailsIconText = lang['deviceDetailsIconText']
     this.manageText = lang['manageText']
   }
 
@@ -326,7 +352,10 @@ class LanguagesCCN {
         'bannerLinkText': 'Lees meer oor koekies',
         'acceptBtnText': 'Aanvaar',
         'rejectBtnText': 'Weier',
+        'identifiersIconText': 'Identifiseerders',
+        'browsingHistoryIconText': 'Blaai Geskiedenis',
         'locationIconText': 'Lokasie',
+        'deviceDetailsIconText': 'Toestelbesonderhede',
         'manageText': 'Koekie-instellings'
       },
       en: {
@@ -335,8 +364,11 @@ class LanguagesCCN {
         'bannerLinkText': 'Read more about cookies',
         'acceptBtnText': 'Accept',
         'rejectBtnText': 'Reject',
+        'identifiersIconText': 'Identifiers',
+        'browsingHistoryIconText': 'Browsing History',
         'locationIconText': 'Location',
-        'manageText': 'Manage cookies'
+        'deviceDetailsIconText': 'Device Details',
+        'manageText': 'Manage Cookies'
       }
     }
   }
