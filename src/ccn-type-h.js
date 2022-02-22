@@ -67,10 +67,10 @@ class CookieConsentNotice {
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Collected</li>
+                                          <li id="liDeviceDetails"><span class="material-icons">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
                                           <li id="liIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
                                           <li id="liBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
                                           <li id="liLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
-                                          <li id="liDeviceDetails"><span class="material-icons">devices</span>${this.banner.deviceDetailsIcon.text}</li>
                                           </ul>
                                       </div> 
                                       <div class="icon__list__container">
