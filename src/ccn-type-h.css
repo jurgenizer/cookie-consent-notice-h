@@ -166,9 +166,10 @@
 .cookieConsentNotice__banner .icon__list {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  border: 1px solid #f3e6e2;
-  background-color: #f1f9f4;
+  padding-bottom: 15px;
+  /*border: 1px solid #f3e6e2;*/
+  /*border: 1px solid rgb(15 23 42/0.1);*/
+  background-color: #ffffff;
   border-radius: 5px;
   font-family: inherit;
   font-weight: normal;
@@ -177,10 +178,10 @@
 
 /* Icon list header */
 .cookieConsentNotice__banner .icon__list .header {
-  font-size: 19px;
-  font-weight: normal;
+  font-size: 15px;
+  font-weight: bolder;
   text-align: left;
-  padding: 7px 0px 4px 12px;
+  padding: 7px 2x 4px 12px;
   
 }
 

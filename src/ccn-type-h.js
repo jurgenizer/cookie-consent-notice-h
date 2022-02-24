@@ -14,11 +14,15 @@ class CookieConsentNotice {
     this.PreBanner = undefined
     this.Cookies = undefined
     this.DOMbanner = undefined
-    // Li items that show icons and assciated text
-    this.LiIdentifiers = undefined
-    this.LiBrowsingHistory = undefined
-    this.LiLocation = undefined
-    this.LiDeviceDetails = undefined
+    // Li items that show icons and associated text
+    this.LiDataCollectedIdentifiers = undefined
+    this.LiDataCollectedBrowsingHistory = undefined
+    this.LiDataCollectedLocation = undefined
+    this.LiDataCollectedDeviceDetails = undefined
+    this.LiDataSharedIdentifiers = undefined
+    this.LiDataSharedBrowsingHistory = undefined
+    this.LiDataSharedLocation = undefined
+    this.LiDataSharedDeviceDetails = undefined
   }
 
   render() {
@@ -67,15 +71,19 @@ class CookieConsentNotice {
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Collected</li>
-                                          <li id="liDeviceDetails"><span class="material-icons">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
-                                          <li id="liIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
-                                          <li id="liBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
-                                          <li id="liLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
+                                          <li id="liDataCollectedDeviceDetails"><span class="material-icons">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                          <li id="liDataCollectedIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
+                                          <li id="liDataCollectedBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
+                                          <li id="liDataCollectedLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
                                           </ul>
                                       </div> 
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Shared</li>
+                                          <li id="liDataSharedDeviceDetails"><span class="material-icons">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                          <li id="liDataSharedIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
+                                          <li id="liDataSharedBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
+                                          <li id="liDataSharedLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
                                           </ul>
                                         </div>
                                   </div>
@@ -95,10 +103,14 @@ class CookieConsentNotice {
     this.DOMbanner = document.getElementById('cookieConsentNotice-banner')
 
     // Get li list items by id
-    this.LiIdentifiers = document.getElementById('liIdentifiers')
-    this.LiBrowsingHistory = document.getElementById('liBrowsingHistory')
-    this.LiLocation = document.getElementById('liLocation')
-    this.LiDeviceDetails = document.getElementById('liDeviceDetails')
+    this.LiDataCollectedIdentifiers = document.getElementById('liDataCollectedIdentifiers')
+    this.LiDataCollectedBrowsingHistory = document.getElementById('liDataCollectedBrowsingHistory')
+    this.LiDataCollectedLocation = document.getElementById('liDataCollectedLocation')
+    this.LiDataCollectedDeviceDetails = document.getElementById('liDataCollectedDeviceDetails')
+    this.LiDataSharedIdentifiers = document.getElementById('liDataSharedIdentifiers')
+    this.LiDataSharedBrowsingHistory = document.getElementById('liDataSharedBrowsingHistory')
+    this.LiDataSharedLocation = document.getElementById('liDataSharedLocation')
+    this.LiDataSharedDeviceDetails = document.getElementById('liDataSharedDeviceDetails')
 
 
     // SET EVENT LISTENERS
@@ -131,10 +143,14 @@ class CookieConsentNotice {
   openSelector() {
     this.PreBanner.style.display = "none";
     this.DOMbanner.classList.add('cookieConsentNotice__show')
-    this.LiIdentifiers.style.display = this.config.showIdentifiers ? "block" : "none"
-    this.LiBrowsingHistory.style.display = this.config.showBrowsingHistory ? "block" : "none"
-    this.LiLocation.style.display = this.config.showLocation ? "block" : "none"
-    this.LiDeviceDetails.style.display = this.config.showDeviceDetails ? "block" : "none"
+    this.LiDataCollectedIdentifiers.style.display = this.config.showDataCollectedIdentifiers ? "block" : "none"
+    this.LiDataCollectedBrowsingHistory.style.display = this.config.showDataCollectedBrowsingHistory ? "block" : "none"
+    this.LiDataCollectedLocation.style.display = this.config.showDataCollectedLocation ? "block" : "none"
+    this.LiDataCollectedDeviceDetails.style.display = this.config.showDataCollectedDeviceDetails ? "block" : "none"
+    this.LiDataSharedIdentifiers.style.display = this.config.showDataSharedIdentifiers ? "block" : "none"
+    this.LiDataSharedBrowsingHistory.style.display = this.config.showDataSharedBrowsingHistory ? "block" : "none"
+    this.LiDataSharedLocation.style.display = this.config.showDataSharedLocation ? "block" : "none"
+    this.LiDataSharedDeviceDetails.style.display = this.config.showDataSharedDeviceDetails ? "block" : "none"
     
   }
 
@@ -274,10 +290,14 @@ class CookieConsentNotice {
       border: obj.border || 'border',
       position: obj.position || 'left',
       hideAfterClick: obj.hideAfterClick || false,
-      showIdentifiers: obj.showIdentifiers || false,
-      showBrowsingHistory: obj.showBrowsingHistory || false,
-      showLocation: obj.showLocation || false,
-      showDeviceDetails: obj.showDeviceDetails || false,
+      showDataCollectedIdentifiers: obj.showDataCollectedIdentifiers || false,
+      showDataCollectedBrowsingHistory: obj.showDataCollectedBrowsingHistory || false,
+      showDataCollectedLocation: obj.showDataCollectedLocation || false,
+      showDataCollectedDeviceDetails: obj.showDataCollectedDeviceDetails || false,
+      showDataSharedIdentifiers: obj.showDataSharedIdentifiers || false,
+      showDataSharedBrowsingHistory: obj.showDataSharedBrowsingHistory || false,
+      showDataSharedLocation: obj.showDataSharedLocation || false,
+      showDataSharedDeviceDetails: obj.showDataSharedDeviceDetails || false,
     }
 
     this.tracking = {
