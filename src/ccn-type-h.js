@@ -80,7 +80,7 @@ class CookieConsentNotice {
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Shared</li>
-                                          <li id="liDataSharedDeviceDetails"><span class="material-icons">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                          <li id="liDataSharedDeviceDetails"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
                                           <li id="liDataSharedIdentifiers"><span class="material-icons">badge</span>${this.banner.identifiersIcon.text}</li>
                                           <li id="liDataSharedBrowsingHistory"><span class="material-icons">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
                                           <li id="liDataSharedLocation"><span class="material-icons">my_location</span>${this.banner.locationIcon.text}</li>
@@ -335,6 +335,7 @@ class CookieConsentNotice {
       },
       deviceDetailsIcon: {
         text: obj.deviceDetailsIconText || lang.deviceDetailsIconText,
+        color: obj.iconColor || '#209cee'
       },
       manageCookies: {
         color: obj.manageColor || '#7a7a7a',
