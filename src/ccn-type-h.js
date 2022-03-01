@@ -151,7 +151,6 @@ class CookieConsentNotice {
     this.LiDataSharedBrowsingHistory.style.display = this.config.showDataSharedBrowsingHistory ? "block" : "none"
     this.LiDataSharedLocation.style.display = this.config.showDataSharedLocation ? "block" : "none"
     this.LiDataSharedDeviceDetails.style.display = this.config.showDataSharedDeviceDetails ? "block" : "none"
-    
   }
 
   acceptCookies() {
