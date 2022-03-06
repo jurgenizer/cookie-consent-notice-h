@@ -120,7 +120,7 @@ class CookieConsentNotice {
   }
 
   checkStatus() {
-    switch (localStorage.getItem("CookieConsentNotice")) {
+    switch (localStorage.getItem("CookieConsentNoticeH")) {
       case "1":
         this.openManageCookies();
         this.activateTracking();
@@ -130,6 +130,7 @@ class CookieConsentNotice {
         this.openManageCookies();
         break;
       default:
+        this.setConsentDefault()
         this.openSelector();
     }
   }
@@ -151,20 +152,40 @@ class CookieConsentNotice {
     this.LiDataSharedBrowsingHistory.style.display = this.config.showDataSharedBrowsingHistory ? "block" : "none"
     this.LiDataSharedLocation.style.display = this.config.showDataSharedLocation ? "block" : "none"
     this.LiDataSharedDeviceDetails.style.display = this.config.showDataSharedDeviceDetails ? "block" : "none"
+    
   }
 
   acceptCookies() {
-    localStorage.setItem("CookieConsentNotice", "1")
+    localStorage.setItem("CookieConsentNoticeH", "1")
     this.openManageCookies()
     this.activateTracking()
     this.addCustomScript()
   }
 
   rejectCookies() {
-    localStorage.setItem("CookieConsentNotice", "0");
+    localStorage.setItem("CookieConsentNoticeH", "0");
     this.openManageCookies();
     this.disableTracking();
   }
+
+  // Jurgen's experiment starts
+  setConsentDefault(){
+     // Google Analytics Tracking Consent set to default
+    if (this.tracking.AnalyticsCode) {
+      let Analytics = document.createElement('script');
+      Analytics.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${this.tracking.AnalyticsCode}`);
+      document.head.appendChild(Analytics);
+      let AnalyticsData = document.createElement('script');
+      AnalyticsData.text = `window.dataLayer = window.dataLayer || [];
+                                function gtag(){dataLayer.push(arguments);}
+                                gtag('consent', 'default', {
+                                  'ad_storage': 'denied',
+                                  'analytics_storage': 'denied'
+                                });`;
+     document.head.appendChild(AnalyticsData);
+    }
+  }
+  // Jurgen's experiment ends
 
   activateTracking() {
     // Google Analytics Tracking
@@ -176,7 +197,13 @@ class CookieConsentNotice {
       AnalyticsData.text = `window.dataLayer = window.dataLayer || [];
                                   function gtag(){dataLayer.push(arguments);}
                                   gtag('js', new Date());
-                                  gtag('config', '${this.tracking.AnalyticsCode}');`;
+                                  gtag('consent', 'update', {
+                                    'ad_storage': 'granted',
+                                    'analytics_storage': 'granted'
+                                  });
+                                  gtag('config', '${this.tracking.AnalyticsCode}' , {
+                                    'cookie_prefix': 'type_h',
+                                  });`;
       document.head.appendChild(AnalyticsData);
     }
 
@@ -223,6 +250,14 @@ class CookieConsentNotice {
 
   disableTracking() {
     // Google Analytics Tracking ('client_storage': 'none')
+
+    /*
+    Update from https://developers.google.com/tag-platform/devguides/consent#tag-manager_1
+    gtag('consent', 'default', {
+     'ad_storage': 'denied'
+   });
+    */
+
     if (this.tracking.AnalyticsCode) {
       let Analytics = document.createElement('script');
       Analytics.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${this.tracking.AnalyticsCode}`);
@@ -231,6 +266,10 @@ class CookieConsentNotice {
       AnalyticsData.text = `window.dataLayer = window.dataLayer || [];
                           function gtag(){dataLayer.push(arguments);}
                           gtag('js', new Date());
+                          gtag('consent', 'update', {
+                            'ad_storage': 'denied',
+                            'analytics_storage': 'denied'
+                          });                       
                           gtag('config', '${this.tracking.AnalyticsCode}' , {
                               'client_storage': 'none',
                               'anonymize_ip': true
