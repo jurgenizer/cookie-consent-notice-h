@@ -90,13 +90,13 @@ class CookieConsentNotice {
                                   </div>
                             
                                     
-                                      <div class="btn__section">
-                                          <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; background-color: ${this.banner.acceptBtn.background};">
-                                              ${this.banner.acceptBtn.text}
-                                          </button>
-                                          <button type="button" id="rejectCookies" class="btn__decline decline__btn__styles" style="color: ${this.banner.rejectBtn.color}; background-color: ${this.banner.rejectBtn.background};">
-                                              ${this.banner.rejectBtn.text}
-                                          </button>
+                                  <div class="btn__section">
+                                      <button type="button" id="rejectCookies" class="btn__decline decline__btn__styles" style="color: ${this.banner.rejectBtn.color}; border: ${this.banner.rejectBtn.border}; background-color: ${this.banner.rejectBtn.background};">
+                                          ${this.banner.rejectBtn.text}
+                                      </button>
+                                      <button type="button" id="acceptCookies" class="btn__accept accept__btn__styles" style="color: ${this.banner.acceptBtn.color}; border: ${this.banner.acceptBtn.border}; background-color: ${this.banner.acceptBtn.background};">
+                                          ${this.banner.acceptBtn.text}
+                                       </button>
                                       </div>
                                   </div>
                               `;
@@ -139,7 +139,7 @@ class CookieConsentNotice {
   openManageCookies() {
     this.PreBanner.style.display = this.config.hideAfterClick ? "none" : "block"
     this.DOMbanner.classList.remove('cookieConsentNotice__show')
-    
+
   }
 
   openSelector() {
@@ -153,7 +153,7 @@ class CookieConsentNotice {
     this.LiDataSharedBrowsingHistory.style.display = this.config.showDataSharedBrowsingHistory ? "block" : "none"
     this.LiDataSharedLocation.style.display = this.config.showDataSharedLocation ? "block" : "none"
     this.LiDataSharedDeviceDetails.style.display = this.config.showDataSharedDeviceDetails ? "block" : "none"
-    
+
   }
 
   acceptCookies() {
@@ -170,8 +170,8 @@ class CookieConsentNotice {
   }
 
   // Jurgen's experiment starts
-  setConsentDefault(){
-     // Google Analytics Tracking Consent set to default
+  setConsentDefault() {
+    // Google Analytics Tracking Consent set to default
     if (this.tracking.AnalyticsCode) {
       let Analytics = document.createElement('script');
       Analytics.setAttribute('src', `https://www.googletagmanager.com/gtag/js?id=${this.tracking.AnalyticsCode}`);
@@ -183,7 +183,7 @@ class CookieConsentNotice {
                                   'ad_storage': 'denied',
                                   'analytics_storage': 'denied'
                                 });`;
-     document.head.appendChild(AnalyticsData);
+      document.head.appendChild(AnalyticsData);
     }
   }
   // Jurgen's experiment ends
@@ -355,13 +355,15 @@ class CookieConsentNotice {
       heading: obj.bannerHeading !== 'none' ? obj.bannerHeading || lang.bannerHeading : '',
       acceptBtn: {
         text: obj.acceptBtnText || lang.acceptBtnText,
-        background: obj.acceptBtnBackground || '#209cee',
-        color: obj.acceptBtnColor || '#fff'
+        background: obj.acceptBtnBackground || '#d9eefc',
+        color: obj.acceptBtnColor || '#209cee', 
+        border: obj.acceptBtnBorder || 'none'
       },
       rejectBtn: {
         text: obj.rejectBtnText || lang.rejectBtnText,
         background: obj.rejectBtnBackground || '#209cee',
         color: obj.rejectBtnColor || '#fff',
+        border: obj.rejectBtnBorder || 'none'
       },
       identifiersIcon: {
         text: obj.identifiersIcontext || lang.identifiersIconText,

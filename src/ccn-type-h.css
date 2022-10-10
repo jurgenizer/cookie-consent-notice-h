@@ -67,7 +67,7 @@
   width: auto;
   bottom: 15px;
   border-radius: 5px;
-  padding: 20px 35px;
+  padding: 15px 30px;
   max-width: 425px;
   z-index: 999;
   -webkit-box-shadow: 0 .625em 1.875em rgba(2,2,3,.2);
@@ -94,21 +94,14 @@
 }
 
 .cookieConsentNotice__banner .read__more:hover {
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 .cookieConsentNotice__banner .btn__section {
-  /*display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;*/
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 12px;
-
-
+  margin-top: 14px;
 }
 
 .cookieConsentNotice__banner .btn__section button {
@@ -118,10 +111,10 @@
 .cookieConsentNotice__banner .accept__btn__styles {
   border: none;
   padding: 12px 15px;
-  font-size: 22px;
+  font-size: 21px;
   font-family: inherit;
   width: 100%;
-  margin-bottom: 14px;
+  margin-bottom: 3px;
   cursor: pointer;
   font-weight: 500;
   transition: filter 0.15s;
@@ -132,8 +125,9 @@
   border: none;
   padding: 12px 15px;
   font-family: inherit;
-  font-size: 22px;
+  font-size: 21px;
   width: 100%;
+  margin-bottom: 14px;
   cursor: pointer;
   font-weight: 500;
   transition: filter 0.15s;
@@ -143,17 +137,17 @@
 .cookieConsentNotice__banner .btn__section button:focus {
   outline: none;
   transform: scale(0.95);
-  /*-webkit-filter: contrast(75%);
-  filter: contrast(75%);*/
-  -webkit-filter: brightness(78%);
-  filter: brightness(78%);
+  -webkit-filter: contrast(75%);
+  filter: contrast(75%);
+  /*-webkit-filter: brightness(78%);
+  filter: brightness(78%);*/
 }
 
 .cookieConsentNotice__banner .btn__section button:hover {
- /* -webkit-filter: contrast(85%);
-  filter: contrast(85%);*/
-  -webkit-filter: brightness(88%);
-  filter: brightness(88%);
+  -webkit-filter: contrast(85%);
+  filter: contrast(85%);
+  /*-webkit-filter: brightness(88%);
+  filter: brightness(88%);*/
 }
 
 .cookieConsentNotice__banner .icon__section {
@@ -174,8 +168,7 @@
   margin: 0;
   padding: 13px;
   border: 1px solid #dbdbdb;
-  /*border: 1px solid rgb(15 23 42/0.1);*/
-  background-color: #f1f1f1;
+  background-color: #d9eefc;
   border-radius: 3px;
   font-family: inherit;
   font-weight: normal;
