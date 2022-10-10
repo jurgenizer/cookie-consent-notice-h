@@ -111,24 +111,24 @@
 
 .cookieConsentNotice__banner .accept__btn__styles {
   border: none;
-  padding: 13px 15px;
-  font-size: 15px;
+  padding: 12px 15px;
+  font-size: 22px;
   font-family: inherit;
   width: 49%;
   cursor: pointer;
-  font-weight: bolder;
+  font-weight: 500;
   transition: filter 0.15s;
   user-select: none;
 }
 
 .cookieConsentNotice__banner .decline__btn__styles {
   border: none;
-  padding: 13px 15px;
+  padding: 12px 15px;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 22px;
   width: 49%;
   cursor: pointer;
-  font-weight: bolder;
+  font-weight: 500;
   transition: filter 0.15s;
   user-select: none;
 }
@@ -233,10 +233,8 @@
     width: 100%;
     margin-bottom: 8px;
   }
-
   
 }
-
 
 
 /* Prebanner styles */

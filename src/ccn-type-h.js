@@ -15,13 +15,13 @@ class CookieConsentNotice {
     this.Cookies = undefined
     this.DOMbanner = undefined
     // Li items that show icons and associated text
+    this.LiDataCollectedLocation = undefined
     this.LiDataCollectedIdentifiers = undefined
     this.LiDataCollectedBrowsingHistory = undefined
-    this.LiDataCollectedLocation = undefined
     this.LiDataCollectedDeviceDetails = undefined
+    this.LiDataSharedLocation = undefined
     this.LiDataSharedIdentifiers = undefined
     this.LiDataSharedBrowsingHistory = undefined
-    this.LiDataSharedLocation = undefined
     this.LiDataSharedDeviceDetails = undefined
   }
 
@@ -71,19 +71,20 @@ class CookieConsentNotice {
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Collected</li>
-                                          <li id="liDataCollectedDeviceDetails"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                          <li id="liDataCollectedLocation"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">my_location</span>${this.banner.locationIcon.text}</li>
                                           <li id="liDataCollectedIdentifiers"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">badge</span>${this.banner.identifiersIcon.text}</li>
                                           <li id="liDataCollectedBrowsingHistory"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
-                                          <li id="liDataCollectedLocation"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">my_location</span>${this.banner.locationIcon.text}</li>
+                                          <li id="liDataCollectedDeviceDetails"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                         
                                           </ul>
                                       </div> 
                                       <div class="icon__list__container">
                                           <ul class="icon__list">
                                           <li class="header">Data Shared</li>
-                                          <li id="liDataSharedDeviceDetails"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
+                                          <li id="liDataSharedLocation"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">my_location</span>${this.banner.locationIcon.text}</li>
                                           <li id="liDataSharedIdentifiers"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">badge</span>${this.banner.identifiersIcon.text}</li>
                                           <li id="liDataSharedBrowsingHistory"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">history_toggle_off</span>${this.banner.browsingHistoryIcon.text}</li>
-                                          <li id="liDataSharedLocation"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">my_location</span>${this.banner.locationIcon.text}</li>
+                                          <li id="liDataSharedDeviceDetails"><span class="material-icons" style="color: ${this.banner.deviceDetailsIcon.color};">tablet_mac</span>${this.banner.deviceDetailsIcon.text}</li>
                                           </ul>
                                         </div>
                                   </div>
