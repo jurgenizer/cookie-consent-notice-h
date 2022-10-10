@@ -1,5 +1,5 @@
 /*
-    Cookie Consent Notice Type h
+    Cookie Consent Notice Type h by Jurgen Geitner
     Adapted from https://github.com/manucaralmo/GlowCookies
 */
 
