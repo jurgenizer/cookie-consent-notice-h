@@ -95,7 +95,6 @@ class CookieConsentNotice {
                                           <li>Personalised Advertising</li>
                                           <li>Personalised Content</li>
                                           <li>Personalised Services</li>
-                                          <li>Personalised Search</li>
                                           <li>Analytics</li>
                                           </ul>
                                         </div>
